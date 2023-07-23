@@ -1,6 +1,6 @@
 import { Controller, Get, Query  } from '@nestjs/common';
 import { CommitsService } from './commits.service';
-import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiOkResponse, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { CommitInterface } from './interface/commit.interface';
 
 @Controller('api/commits')
@@ -12,6 +12,12 @@ export class CommitsController {
     @Get()
     @ApiOkResponse({type: CommitInterface, isArray: true})
     @ApiOperation({description: 'Get all commits'})
+    @ApiQuery({
+        name: "page",
+        type: String,
+        description: "Page parameter. Optional, default value is 1",
+        required: false
+      })
     async get(@Query('page') page: number) : Promise<CommitInterface[]>{
         return this.commitsService.getCommits(page);
     }
