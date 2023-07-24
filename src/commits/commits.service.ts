@@ -19,38 +19,56 @@ export class CommitsService {
       Authorization: `Bearer ${configService.GITHUB_ACCESS_TOKEN}`,
       Accept: 'application/vnd.github+json',
       'X-GitHub-Api-Version': ' 2022-11-28',
+      author: configService.GITHUB_OWNER,
+    
     };
   }
 
   async getCommits(page = 1, per_page = 10): Promise<CommitInterface[]> {
+   try {
     const response : AxiosResponse<CommitInterface[]> = await firstValueFrom(
       this.httpService.get(
-        `https://api.github.com/repos/${this.configService.GITHUB_OWNER}/${this.configService.GITHUB_REPO}/commits?page=${page}&per_page=${per_page}`,
+        `${this.configService.GITHUB_API}repos/${this.configService.GITHUB_OWNER}/${this.configService.GITHUB_REPO}/commits?page=${page}&per_page=${per_page}`,
         this.headers,
       ),
     );
     return response.data;
+   } catch (error) {
+    console.error("error" , error)
+    return []
+   }
   }
 
   
   async getLanguageStats(): Promise<any> {
-    const response = await firstValueFrom(
-      this.httpService.get(
-        `https://api.github.com/repos/${this.configService.GITHUB_OWNER}/${this.configService.GITHUB_REPO}/languages`,
-        this.headers,
-      ),
-    );
-    return response.data;
+    try {
+      const response = await firstValueFrom(
+        this.httpService.get(
+          `${this.configService.GITHUB_API}repos/${this.configService.GITHUB_OWNER}/${this.configService.GITHUB_REPO}/languages`,
+          this.headers,
+        ),
+      );
+      return response.data;
+    } catch (error) {
+      console.error("error" , error)
+      return {}
+    }
   }
 
   async getPushes(): Promise<PushInterface[]> {
+   try {
     const response: AxiosResponse<PushInterface[]> = await firstValueFrom(
       this.httpService.get(
-        `https://api.github.com/repos/${this.configService.GITHUB_OWNER}/${this.configService.GITHUB_REPO}/events?page=1&per_page=100`,
+        `${this.configService.GITHUB_API}repos/${this.configService.GITHUB_OWNER}/${this.configService.GITHUB_REPO}/events?page=1&per_page=100`,
         this.headers,
       ),
     );
     return response.data.filter((event) => event.type === 'PushEvent');
+   } catch (error) {
+    
+    console.error("error" , error)
+    return []
+   }
   }
   
 }

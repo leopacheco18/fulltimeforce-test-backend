@@ -18,8 +18,8 @@ export class CommitsController {
         description: "Page parameter. Optional, default value is 1",
         required: false
       })
-    async get(@Query('page') page: number) : Promise<CommitInterface[]>{
-        return this.commitsService.getCommits(page);
+    async get() : Promise<CommitInterface[]>{
+        return this.commitsService.getCommits(1, 100);
     }
 
     
@@ -38,9 +38,17 @@ export class CommitsController {
         return (await this.commitsService.getPushes()).length;
     }
 
+    @Get('/count')
+    @ApiOkResponse({type: Number})
+    @ApiOperation({description: 'Get all commits'})
+    async getCount(): Promise<Number> {
+        return (await this.commitsService.getCommits(1, 100)).length;
+    }
+
     @Get('/languages')
     @ApiOperation({description: 'Get all languages stats'})
     async getLanguages(): Promise<any> {
         return this.commitsService.getLanguageStats();
     }
+
 }
