@@ -1,73 +1,51 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# FullTimeForce Home Test Backend
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+For this project I have decided to use React + Ant Design for the frontend. The backend I have used Nest.js + Swagger. Additionally, the deployment was done in AWS using Docker, ECR and EC2 for the backend and S3 for the frontend.
 
-## Installation
+## Live Demo
 
-```bash
-$ npm install
-```
+[Live Demo](http://fulltimeforce-home-test-frontend.s3-website-us-east-1.amazonaws.com/commits)
 
-## Running the app
+## Frontend Repo
 
-```bash
-# development
-$ npm run start
+[Repo Frontend](https://github.com/leopacheco18/fulltimeforce-test-frontend)
 
-# watch mode
-$ npm run start:dev
+## Backend enpoints
 
-# production mode
-$ npm run start:prod
-```
+[Backend endpoints](http://54.237.175.53/docs)
 
-## Test
+### Requirements
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+ $ npm i -g @nestjs/cli
 ```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Instructions
 
-## Stay in touch
+```bash
+ $ git clone https://github.com/leopacheco18/fulltimeforce-test-backend.git
+ $ cd fulltimeforce-test-backend
+ $ npm install
+ $ cp .env.example .env
+ $ npm start
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+> :warning: **If you want to run this project localy, you must add**: GITHUB_ACCESS_TOKEN=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
 
-## License
+#### Example
 
-Nest is [MIT licensed](LICENSE).
+1. Commits
+
+   ![1](https://github.com/leopacheco18/fulltimeforce-test-frontend/assets/47113025/e47278f2-cd6c-445b-b2f8-e91a750428a2)
+
+2. Dashboard
+
+  ![2](https://github.com/leopacheco18/fulltimeforce-test-frontend/assets/47113025/5e1727e9-d4d9-4a55-92f0-36816f279e4d)
+
+3. Backend Api
+
+   ![3](https://github.com/leopacheco18/fulltimeforce-test-frontend/assets/47113025/f8e93e7a-1c23-4212-a2fe-61714dd908b9)
+
